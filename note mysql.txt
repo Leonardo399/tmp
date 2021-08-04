@@ -1,0 +1,338 @@
+
+link documentation mysql : https://www.mysqltutorial.org/mysql-sample-database.aspx/
+link generate data dummy mysql : http://filldb.info/
+
+
+=== SINTAKS MYSQL ===
+# mengganti password mysql lwt cmd 
+- SET PASSWORD FOR root@localhost=PASSWORD('newPassword'); // !masuk ke mysql dulu 
+// set password tanpa password
+- SET PASSWORD FOR root@localhost='';
+
+# Cara Import Data Table ke mysql dengan excel
+1. siapkan data excel.csv // ! nama kolom dihapus
+2. import data exel melalui phpmyadmin
+3. pilih file
+4. Opsi format-spesifik: Kolom dipisahkan oleh: ; (semi-colon) | , (koma) // ! semi-colon jika data table dipisahkan oleh kolom
+5. go
+
+! menampilkan perintah mysql di cmd : ? | help
+
+
+=== DDL (DATA DEFINITION LANGUAGE) ===
+# SELECTING DATABASE 
+- use nameDatabase;
+
+# CREATE DATABASE
+- CREATE DATABASE namaDatabase
+
+# SHOW DATABASE 
+- SHOW DATABASES;
+
+# DROP DATABASE
+- drop database namaDatabase;
+
+# Membuat table
+- create table namatable(
+	-> namaKolom1 tipedata constraint,
+	-> namaKolom2 tipedata constraint);
+
+# CONTRAINT TABLE
+- NOT NULL | NULL
+- PRIMARY KEY
+	// menambah primary key di table yang sudah jadi
+		ALTER TABLE nama_tabel
+		ADD PRIMARY KEY(nama_field);
+	// menghapus primary key
+		ALTER TABLE nama_tabel
+		DROP PRIMARY KEY;
+
+- AUTO_INCREMENT // ! AUTO unique dan tipe data harus integer
+- DEFAULT value
+- UNIQUE
+	// menambah unique
+		alter table namaTable 
+		ADD CONSTRAINT keyConstraint UNIQUE(namaKolom1, namaKolom2(opsional)) 
+	// Menghapus unique
+		alter table namaTable
+		drop index keyConstraint
+- CHECK
+- FOREIGN KEY 
+	// menambah foreign key
+		ALTER TABLE namaTable 
+		Add CONSTRAINT aliasConstraint FOREIGN KEY(namaKolomTable) REFERENCES namaTableReference(namaKolomReference) 
+	// menghapus foreign key 
+		ALTER TABLE table_name 
+		DROP FOREIGN KEY constraint_name;
+
+- UNSIGNED | SIGNED // unsigned(+), signed(-)
+
+// CONTOH PEMAKAIAN CONTRAINT 
+CREATE TABLE IF NOT EXISTS toko (
+    toko_id INT AUTO_INCREMENT,
+    task_id INT,
+    judul varchar(100) UNIQUE,
+    nama_toko VARCHAR(255) NOT NULL,
+    price int not null CHECK(price >= 10),
+    is_completed BOOLEAN NOT NULL DEFAULT FALSE,
+    PRIMARY KEY (todo_id , task_id),
+    FOREIGN KEY (task_id)
+        REFERENCES tasks (task_id)
+        ON UPDATE RESTRICT 
+	ON DELETE CASCADE
+);
+
+!! NOTE !!
+MySQL memiliki lima pilihan referensi: CASCADE, SET NULL, NO ACTION, RESTRICT, dan SET DEFAULT.
+
+CASCADE: jika baris dari tabel induk dihapus atau dimutakhirkan, nilai-nilai baris yang cocok di tabel anak otomatis dihapus atau diperbarui.
+SET NULL: jika baris dari tabel induk dihapus atau diperbarui, nilai dari kolom kunci asing (atau kolom) di tabel anak diatur ke NULL.
+BATAS: jika baris dari tabel induk memiliki baris yang cocok di tabel anak, MySQL menolak menghapus atau memperbarui baris di tabel induk.
+NO ACTION: sama dengan MEMBATASI.
+SET DEFAULT: dikenali oleh parser MySQL. Namun, tindakan ini ditolak oleh tabel InnoDB dan NDB.
+
+In fact, MySQL fully supports three actions: RESTRICT, CASCADE and SET NULL.
+
+If you don’t specify the ON DELETE and ON UPDATE clause, the default action is RESTRICT.
+
+! CONSTRAINT nameContraint value
+! cara melihat aliasconstraint?
+	- show create table namaTabel;
+! cara mengubah aliasConstraint?
+	-> masuk ke phpmyadmin
+	-> masuk ke menu tampilkan relasi di tabel child relasi menu struktur
+
+! aliasConstraint = keyNameConstraint
+
+
+# MELIHAT STRUKTUR DATA TABLE
+- desc namaTable
+
+# MENAMBAH KOLOM BARU 
+- ALTER table namaTable ADD COLUMN(opsional) namaKolomBaru tipeData Constraint AFTER|BEFORE(optional) namaKolomYgSudahAda; // ! tanpa after atau before maka kolom baru berada di paling bwh
+
+# MERUBAH NAMA KOLOM TABLE
+- Alter table namaTable change namaKolomLama namaKolomBaru tipeData Constrains
+	! contraints : foreign key, primary key, not null, auto_increment, default, dll
+
+# MERUBAH TIPE DATA KOLOM TABLE
+- Alter table namaTable modify namaKolom tipeDataBaru contraintBaru
+
+# MENGHAPUS KOLOM TABLE
+- ALTER table namaTable DROP COLUMN(opsional) namaKolom
+
+# MERUBAH NAMA TABLE 
+- RENAME TABLE namaTableLama To namaTableBaru, (<opsional>)namaTableLamaKedua To namaTableBaruKedua(</opsional>)
+
+
+
+
+=== DML (DATA MANILUPLATION LANGUAGE) ===
+
+# SELECTING DATA
+- SELECT * FROM namaTable // mengambil smua baris data smua Kolom  di table
+- SELECT Kolom1, Kolom2 FROM namaTable // mengambil smua baris data beberapa kolom di table
+
+
+# ORDER BY // Mengambil data dengan diurutkan berdasarkan kolom
+- SELECT * FROM namaTable ORDER BY namaKolom1 ASC|DESC, <opsional>namaKolom2 ASC|DESC</opsional>
+
+
+# WHERE
+- SELECT * FROM namaTable WHERE namaKolom1 <operator> <value> <opsional>AND namaKolom2 <operator> <value></opsional> <opsional>ORDER BY ...<opsional> 
+
+<operator> : =, !=, <>(mirip !=) , >, <, >=, <=, LIKE(biasanya pke value %), IN(value1, value2), BEETWEN
+<logicOperator> : AND, OR, NOT
+<value> : "%string%" | 123 | "string" 
+
+
+# DISTINCT // untuk menampilkan data yang sudah dieliminasi suatu baris jika ada value yang sama
+- SELECT DISTINCT * FROM mahasiswa;
+
+
+# BEETWEN
+contoh : WHERE buyPrice BETWEEN 90 AND 100;
+
+# LIMIT
+- LIMIT indexAwal, jmlBarisYgDiAmbil;
+contoh : ORDER BY creditLimit LIMIT 5,3
+
+
+# IS NULL
+SELECT * 
+FROM projects
+WHERE complete_date IS NULL;
+
+
+# CONCAT_WS() & Alias
+SELECT 
+    CONCAT_WS(', ', lastName, firstname) as Fullname // menggunakan as(alias)
+FROM
+    employees;
+
+// alias lain
+- select namaKolom `namaAlias` from namaTable; // namaAlias akan muncul di judul kolom
+- select alias.namaKolom from namaTable alias; 
+
+# JOIN
+-- INNER JOIN --
+- SELECT * FROM namaTable1 join namaTable2 on namatable1.KolomFK = namaTable2.KolomFK
+	// contoh : select s.id_siswa, s.name, j.mapel  from siswa s inner join jadwal j on s.id_siswa = j.id_siswa
+
+
+
+# GROUP BY
+// contoh 
+SELECT 
+    mapel, COUNT(*) total // ! biasanya group by di barengkan dengan fungsi agregate
+FROM
+    jadwal
+GROUP BY mapel;
+
+// fungsi agregate : SUM(), COUNT(), dll
+
+
+# HAVING
+! biasanya digabungkan dengan group by
+// contoh 
+SELECT 
+    ordernumber,
+    SUM(quantityOrdered) AS itemsCount,
+    SUM(priceeach*quantityOrdered) AS total
+FROM
+    orderdetails
+GROUP BY 
+   ordernumber
+HAVING 
+   total > 1000; // ! total harus ada di kolom yg di tampilkan
+
+----
+SELECT 
+    a.ordernumber, 
+    status, 
+    SUM(priceeach*quantityOrdered) total
+FROM
+    orderdetails a
+INNER JOIN orders b 
+    ON b.ordernumber = a.ordernumber
+GROUP BY  
+    ordernumber, 
+    status
+HAVING 
+    status = 'Shipped' AND 
+    total > 1500;
+
+
+
+# subQuery
+// contoh : 
+SELECT 
+    customerNumber, 
+    checkNumber, 
+    amount
+FROM
+    payments
+WHERE
+    amount = (SELECT MAX(amount) FROM payments);
+
+
+# EXIST
+
+
+
+# UNION
+SELECT column_list
+UNION [DISTINCT | ALL]
+SELECT column_list
+UNION [DISTINCT | ALL]
+SELECT column_list
+...
+
+
+
+# INSERT
+- INSERT INTO namaTable(kolom1,kolom2,...) VALUES('value1',...),('value1.2',...),dst;
+
+
+# INSERT IGNORE
+! jika memasukan value yang menyebabkan duplicate pada kolom yg bersifat unique, maka value tersebut akan di abaikan 
+-> INSERT INTO subscribers(email)
+VALUES('john.doe@gmail.com');
+
+-> INSERT IGNORE INTO subscribers(email)
+VALUES('john.doe@gmail.com'), 
+      ('jane.smith@ibm.com');
+
+
+
+# UPDATE
+- UPDATE table_name 
+SET 
+    column_name1 = expr1,
+    column_name2 = expr2,
+    ...
+[WHERE
+    condition];
+
+
+! jika tidak pake where maka smua isi table akan berubah
+
+
+# UPDATE JOIN
+// Contoh : 
+UPDATE employees
+        LEFT JOIN
+    merits ON employees.performance = merits.performance 
+SET 
+    salary = salary + salary * 0.015
+WHERE
+    merits.percentage IS NULL;
+
+
+
+# DELETE
+- DELETE FROM table_name
+WHERE condition;
+
+! jika tidak memakai where maka smua isi table akan terhapus
+
+# DELETE JOIN
+// contoh 
+DELETE t1,t2  // maka isi di table t1 dan t2 akan terhapus
+FROM t1
+    INNER JOIN
+    t2 ON t2.ref = t1.id 
+WHERE
+    t1.id = 1;
+---
+DELETE T1  // hanya isi di table t1 saja yang terhapus
+FROM T1
+        LEFT JOIN
+    T2 ON T1.key = T2.key 
+WHERE
+    T2.key IS NULL;
+
+
+
+
+=== NOTE ===
+! Recomended untuk menggunakan alias untuk sintaks yang panjang atau namakolom yang panjang
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
