@@ -1,0 +1,16 @@
+install extension phpfmt - PHP formatter di vscode
+
+
+// tambahkan ini di setting.json
+"[php]": {
+        "editor.defaultFormatter": "kokororin.vscode-phpfmt"
+    },
+    "phpfmt.psr2": false, 
+    "phpfmt.exclude": [
+        "AllmanStyleBraces"
+    ],
+    "phpfmt.passes":[
+        "AlignDoubleArrow",
+        "SpaceAroundParentheses", // untuk double spasi
+        "ShortArray"
+    ]

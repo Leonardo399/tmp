@@ -1,0 +1,39 @@
+#VIDEO QuickTip (FAVICON)
+extensi favicon : .ico
+ukuran biasa favicon: 16 x 16 & 32 x 32
+gambar favicon akan aktif jika disimpan di folder root web server bisa juga local server(mysql,dll)
+<link rel="shortcut icon" href="favicon.ico" />
+
+== link mengubah file gambar menjadi file .ico ==
+1. favicomatic.com
+2. realfavicongenerator.net
+
+
+
+
+
+# X-DEBUG
+
+// cara lihat versi php
+	1. link lihat versi brapa php yang digunakan :https://xdebug.org/wizard
+	2. buat file test.php yg isinya <? php phpinfo(); ?>
+	3. buka file test.php lwt url (jalankan server xamppnya)
+	4. file.test -> view page source, kemudian copas smua isinya
+	5. paste di link : https://xdebug.org/wizard
+	6. klik analyse my phpinfo() output
+
+// cara instalasi 
+	1. download xdebug sesuai versi php
+	2. pindahkan file xdebug yg sudh d download ke C:\xampp\php\ext (sesuai tempat penyimpanan xampp)
+	3. cari file php.ini di C:\xampp\php\php.ini dan tambahkan isinya di paling bawah : 
+	"zend_extension = C:\xampp\php\ext\php_xdebug-3.0.2-7.4-vc15-x86_64.dll" (nama file sesuai xdebug yg di download)
+	4. restart server (xampp)
+
+
+Instructions
+Download php_xdebug-3.0.2-7.4-vc15-x86_64.dll
+Move the downloaded file to C:\xampp\php\ext
+Update C:\xampp\php\php.ini and change the line
+zend_extension = C:\xampp\php\ext\php_xdebug-3.0.2-7.4-vc15-x86_64.dll
+Restart the webserver
+	 

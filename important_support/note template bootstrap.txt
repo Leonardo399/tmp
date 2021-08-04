@@ -1,0 +1,29 @@
+langkah - langkah membuat template dengan bootstrap : 
+1. download bootstrap, xtract lalu pindahkan css dan js nya
+
+=== jquery ===
+2. masuk ke link download jquery : https://jquery.com/download/
+	-> lalu pilih yg compressed
+	-> lalu save(ctrl + save) di folder yg dipilih
+
+=== Popper ===
+3. masuk ke link poppover : https://popper.js.org/
+	-> masuk ke menu on github
+	-> masuk link menggunakan download lwt cdn (di documentation)
+		<!-- Development version --> pilih yg ini
+		<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+
+		<!-- Production version -->
+		<script src="https://unpkg.com/@popperjs/core@2"></script>
+	-> lalu save(ctrl + save) di folder yg dipilih
+	-> download juga popper.min.js.map cari di gugel
+
+4. ubah link pada file html yg d pakai sesuaikan dengan direktorinya penyimpanan file css dan js nya
+
+
+
+$ cara 2 $
+
+1. download bootstrap dist (css, dan js)
+2. masuk kelink jquery dan popper yang ada di starter tamplate
+
