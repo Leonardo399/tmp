@@ -1,0 +1,30 @@
+http : rotokol jaringan lapisan aplikasi (application layer) yang dikembangkan untuk membantu proses transfer antar komputer. Protokol ini berguna untuk mentransfer informasi seperti dokumen, file, gambar, dan video antar komputer.
+ssh : protokol transfer yang digunakan untuk mengontrol dan memodifikasi server dari jarak jauh.Fungsi SSH adalah sebagai media transfer data aman dan terpercaya yang bisa digunakan secara remote atau dari jarak jauh.
+website : adalah kumpulan halaman web yang dapat diakses publik dan saling terkait yang berbagi satu nama domain
+web browser : perangkat lunak yang berfungsi untuk menerima dan menyajikan sumber informasi dari Internet. Sebuah sumber informasi diidentifikasi dengan pengidentifikasi sumber seragam yang dapat berupa halaman web, gambar, video, atau jenis konten lainnya
+web server : sebuah software (perangkat lunak) yang memberikan layanan berupa data. Berfungsi untuk menerima permintaan HTTP atau HTTPS dari klien atau kita kenal dengan web browser (Chrome, Firefox)
+database :  kumpulan dari data yang saling berhubungan yang ada dalam suatu organisasi atau enterprise dengan berbagai kegunaan
+rdbms : adalah sebuah program komputer (atau secara lebih tipikal adalah seperangkat program komputer) yang dirancang untuk mengatur/memanajemen sebuah basis data sebagai sekumpulan data yang disimpan secara terstruktur, dan melakukan operasi-operasi atas data atas permintaan penggunanya.
+
+oop : suatu metode pemrograman yang berorientasi pada objek. Program-program yang telah ada merupakan gabungan dari beberapa komponen-komponen kecil yang sudah ada sebelumnya.
+Functional programming : suatu paradigma pemrograman yang berkutat pada komputasi yang terjadi di dalam fungsi matematis dan menghindari terjadinya perubahan data. Yang dimaksud dengan fungsi matematis sendiri adalah sebuah hubungan antara input yang akan mengembalikan output.
+Framework : suatu kerangka kerja yang digunakan untuk mengembangkan aplikasi berbasis desktop atau aplikasi berbasis website.
+
+
+
+=== STACK MERN ===
+
+MERN|MEVN|MEAN adalah akronim untuk MongoDB, Express JS, React JS dan Node JS. Stack MERN adalah kombinasi dari beberapa teknologi terbsebut, semua berdasarkan JavaScript, yang digunakan untuk membangun aplikasi baik web ataupun mobile.
+MERN (MongoDB|Mysql, ExpressJs, React, Node)
+MEVN (MongoDB|Mysql, ExpressJs, Vue, Node)
+MEAN (MongoDB|Mysql, ExpressJs, Angular, Node)
+REPL (READ - EVAL - PRINT - LOOP)
+
+
+node.js : adalah runtime javascript yang dibangun di mesin javascript V8 Chrome
+runtime : adalah tempat yang akan kita gunakan untuk menjalankan perintah code
+Node Package Manager (NPM) : merupakan pengelola package untuk JavaScript yang dapat memudahkan kita dalam mengelola package yang tersedia pada https://www.npmjs.com/.
+ExpressJs : merupakan web app framework yang dibuat di atas Node.js
+
+
+ 
