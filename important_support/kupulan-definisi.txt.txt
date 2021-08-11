@@ -1,11 +1,19 @@
-http : rotokol jaringan lapisan aplikasi (application layer) yang dikembangkan untuk membantu proses transfer antar komputer. Protokol ini berguna untuk mentransfer informasi seperti dokumen, file, gambar, dan video antar komputer.
-ssh : protokol transfer yang digunakan untuk mengontrol dan memodifikasi server dari jarak jauh.Fungsi SSH adalah sebagai media transfer data aman dan terpercaya yang bisa digunakan secara remote atau dari jarak jauh.
+internet ( Interconnected Network ) : adalah sebuah sistem komunikasi global yang menghubungkan komputer-komputer dan jaringan-jaringan komputer diseluruh dunia.
+http (Hypertext Transfer Protokol): rotokol jaringan lapisan aplikasi (application layer) yang dikembangkan untuk membantu proses transfer antar komputer. Protokol ini berguna untuk mentransfer informasi seperti dokumen, file, gambar, dan video antar komputer.
+ssh (Secure shell) : protokol transfer yang digunakan untuk mengontrol dan memodifikasi server dari jarak jauh.Fungsi SSH adalah sebagai media transfer data aman dan terpercaya yang bisa digunakan secara remote atau dari jarak jauh.
 website : adalah kumpulan halaman web yang dapat diakses publik dan saling terkait yang berbagi satu nama domain
 web browser : perangkat lunak yang berfungsi untuk menerima dan menyajikan sumber informasi dari Internet. Sebuah sumber informasi diidentifikasi dengan pengidentifikasi sumber seragam yang dapat berupa halaman web, gambar, video, atau jenis konten lainnya
 web server : sebuah software (perangkat lunak) yang memberikan layanan berupa data. Berfungsi untuk menerima permintaan HTTP atau HTTPS dari klien atau kita kenal dengan web browser (Chrome, Firefox)
 database :  kumpulan dari data yang saling berhubungan yang ada dalam suatu organisasi atau enterprise dengan berbagai kegunaan
 rdbms : adalah sebuah program komputer (atau secara lebih tipikal adalah seperangkat program komputer) yang dirancang untuk mengatur/memanajemen sebuah basis data sebagai sekumpulan data yang disimpan secara terstruktur, dan melakukan operasi-operasi atas data atas permintaan penggunanya.
-
+DNS (Domain Name Server) : sebuah sistem yang menghubungkan Uniform Resource Locator (URL) dengan Internet Protocol Address (IP Address).
+Domain : adalah nama yang mudah diingat yang terkait dengan alamat IP fisik di internet. 
+Hosting : sebuah layanan online yang digunakan untuk mengelola data situs atau aplikasi web oleh pengguna dan ditampilkan melalui via internet
+API (Application Programming Interface) : sebuah interface yang dapat menghubungkan aplikasi satu dengan aplikasi lainnya.
+git : merupakan version control system yang digunakan para developer untuk mengembangkan software secara bersama-bersama
+github : sebuah website(layanan cloud) khusus untuk menyimpan file" source code, d github sudh ada git 
+vcs (version control system) : sistem yang mengelola perubahan dalam suatu dokumen
+DOM (Document Object Model) : Document Object Model (DOM) adalah sebuah antarmuka pemrograman (programing interface) untuk HTML, XML dan SVG yang bersifat lintas platform dan language-independent.[1] Sebuah peramban web tidak harus menggunakan DOM untuk menampilkan dokumen HTML. Namun DOM diperlukan oleh JavaScript yang akan mengubah tampilan sebuah situs web secara dinamis. Dengan kata lain, DOM adalah cara JavaScript melihat suatu halaman HTML.
 oop : suatu metode pemrograman yang berorientasi pada objek. Program-program yang telah ada merupakan gabungan dari beberapa komponen-komponen kecil yang sudah ada sebelumnya.
 Functional programming : suatu paradigma pemrograman yang berkutat pada komputasi yang terjadi di dalam fungsi matematis dan menghindari terjadinya perubahan data. Yang dimaksud dengan fungsi matematis sendiri adalah sebuah hubungan antara input yang akan mengembalikan output.
 Framework : suatu kerangka kerja yang digunakan untuk mengembangkan aplikasi berbasis desktop atau aplikasi berbasis website.
