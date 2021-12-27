@@ -1,0 +1,11 @@
+## Error message saat clone repo di github : could not create ssl/tls secure channel github ##
+link youtube : https://www.youtube.com/watch?v=LK7-YNpxEhA
+
+# Langkah Langkah : 
+1. masuk ke menu run (bisa ketikan run di kolom search windows)
+2. ketik 'regedit'
+3. masuk ke HKEY_LOCAL_MACHINE -> SYSTEM -> CurrentControlSet -> SecurityProviders -> SCHANNEL -> Protocols
+4. klik kanan di folder Protocols dan pilih menu NEW -> key -> tulis nama TLS 1.2
+5. setelah terbuat folder TLS 1.2 maka klik kanan di folder TLS 1.2 -> pilih menu NEW -> KEY -> tulis nama Client
+6. setelah terbuat folder Client maka klik kanan di folder Client tersebut -> pilih menu NEW -> pilih DWOR (32 bit) value -> maka akan terbuat suatu file REG_DWORD -> kemudian ubah nama file tersebut menjadi DisabledByDefault -> klik kanan -> klik modify -> value = 0 , hexadesimal -> klik ok
+7. kemudian lakukan buat file REG_DWORD sama seperti langkah 6 tetapi ubah nama filenya menjadi Enabled -> modify value = 1, hexadesimal
